@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    <title>Child of the Night Mobile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="mobile-app">
+        <!-- Status Bar -->
+        <div id="status-bar" class="status-bar">
+            <span class="status-time">9:41</span>
+            <span class="status-indicators">
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+            </span>
+        </div>
+
+        <!-- Tab Navigation (Top) -->
+        <div id="tab-bar" class="mobile-tab-bar">
+            <div id="tabs-container" class="tabs-container"></div>
+            <button id="new-tab-btn" class="new-tab-btn">+</button>
+        </div>
+
+        <!-- Address Bar -->
+        <div id="address-bar" class="address-bar">
+            <button id="menu-btn" class="icon-btn">☰</button>
+            <div class="address-input-wrapper">
+                <span class="security-icon" id="security-icon">🔒</span>
+                <input 
+                    type="text" 
+                    id="address-input" 
+                    class="address-input" 
+                    placeholder="Search or enter URL"
+                    autocomplete="off"
+                >
+            </div>
+            <button id="search-btn" class="icon-btn">🔍</button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="content-area" class="content-area">
+            <div id="webview-container" class="webview-container"></div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div id="bottom-nav" class="bottom-nav">
+            <button id="back-btn" class="nav-btn" title="Back">◀</button>
+            <button id="forward-btn" class="nav-btn" title="Forward">▶</button>
+            <button id="refresh-btn" class="nav-btn" title="Refresh">⟳</button>
+            <button id="home-btn" class="nav-btn" title="Home">⌂</button>
+            <button id="share-btn" class="nav-btn" title="Share">↗</button>
+        </div>
+
+        <!-- Side Menu -->
+        <div id="side-menu" class="side-menu hidden">
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <button id="close-menu" class="close-btn">✕</button>
+            </div>
+            <div class="menu-content">
+                <button id="menu-history" class="menu-item">⏰ History</button>
+                <button id="menu-bookmarks" class="menu-item">★ Bookmarks</button>
+                <button id="menu-settings" class="menu-item">⚙️ Settings</button>
+                <button id="menu-share" class="menu-item">↗ Share</button>
+                <button id="menu-refresh" class="menu-item">⟳ Reload</button>
+            </div>
+        </div>
+
+        <!-- History Panel -->
+        <div id="history-panel" class="side-panel hidden">
+            <div class="panel-header">
+                <h3>History</h3>
+                <button id="close-history" class="close-btn">✕</button>
+            </div>
+            <input type="text" id="history-search" class="search-input" placeholder="Search history...">
+            <div id="history-list" class="panel-list"></div>
+        </div>
+
+        <!-- Bookmarks Panel -->
+        <div id="bookmarks-panel" class="side-panel hidden">
+            <div class="panel-header">
+                <h3>Bookmarks</h3>
+                <button id="close-bookmarks" class="close-btn">✕</button>
+            </div>
+            <div id="bookmarks-list" class="panel-list"></div>
+            <button id="bookmark-current" class="action-btn">★ Bookmark This Page</button>
+        </div>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="side-panel hidden">
+            <div class="panel-header">
+                <h3>Settings</h3>
+                <button id="close-settings" class="close-btn">✕</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-group">
+                    <label>
+                        <input type="checkbox" id="https-only" checked>
+                        HTTPS Only
+                    </label>
+                    <label>
+                        <input type="checkbox" id="block-tracking" checked>
+                        Block Tracking
+                    </label>
+                    <label>
+                        <input type="checkbox" id="block-cookies" checked>
+                        Block Cookies
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <button id="clear-history-mobile" class="danger-btn">Clear History</button>
+                    <button id="clear-cache-mobile" class="danger-btn">Clear Cache</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div id="modal-overlay" class="modal-overlay hidden"></div>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/bookmarks.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/mobile-app.js"></script>
+</body>
+</html>

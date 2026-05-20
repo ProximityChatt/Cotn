@@ -1,0 +1,1 @@
+{\n  \"name\": \"child-of-night-mobile\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Child of the Night Mobile Browser - Secure mobile web browser\",\n  \"main\": \"src/index.html\",\n  \"scripts\": {\n    \"start\": \"open src/index.html\"\n  }\n}"
